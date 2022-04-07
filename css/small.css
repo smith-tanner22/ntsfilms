@@ -1,0 +1,71 @@
+.logo {
+    background: url("/path") no-repeat; 
+    width: 150px; 
+    height: 150px; 
+    display: block; 
+    text-indent: -9999px;
+}
+
+main {
+    padding: 20px 12px 10px 20px;
+}
+
+header {
+    font-family: 'Josefin Slab', serif;
+}
+
+footer {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+p {
+    font-family: 'Lexend', sans-serif;
+}
+
+.navigation {
+    list-style-type: none;
+    list-style: none;
+    display: flex;
+
+    align-items: center;
+    padding: 0.75em;
+    background-color: #0E1821;
+    letter-spacing: .2em;
+    font-size: 20px;
+    top: 0;
+    width: 100%;
+}
+
+.navigation a {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.navigation ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.navigation a:hover {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    transform: scale(1.05);
+}
+
+nav ul a {
+    
+    color: #ffffff;
+    padding: 20px;
+}
+
