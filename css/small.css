@@ -1,71 +1,154 @@
-.logo {
-    background: url("/path") no-repeat; 
-    width: 150px; 
-    height: 150px; 
-    display: block; 
-    text-indent: -9999px;
-}
-
+/* General Rules */
 main {
-    padding: 20px 12px 10px 20px;
+  padding: 20px 12px 10px 20px;
 }
 
 header {
-    font-family: 'Josefin Slab', serif;
+  font-family: 'Josefin Slab', serif;
 }
 
-footer {
-    text-align: center;
+.logo {
+  background: url('/path') no-repeat;
+  width: 150px;
+  height: 150px;
+  display: block;
+  text-indent: -9999px;
 }
 
 h1 {
-    font-family: 'Varela Round', sans-serif;
+  font-family: 'Varela Round', sans-serif;
 }
 
 p {
-    font-family: 'Lexend', sans-serif;
+  font-family: 'Lexend', sans-serif;
 }
 
-.navigation {
-    list-style-type: none;
-    list-style: none;
-    display: flex;
+/* NAVIGATION */
 
-    align-items: center;
-    padding: 0.75em;
-    background-color: #0E1821;
-    letter-spacing: .2em;
-    font-size: 20px;
-    top: 0;
-    width: 100%;
+.navigation {
+  list-style-type: none;
+  list-style: none;
+  display: flex;
+
+  align-items: center;
+  padding: 0.75em;
+  background-color: #0e1821;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+  top: 0;
+  width: 100%;
 }
 
 .navigation a {
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .navigation ul {
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .navigation a:hover {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    transform: scale(1.05);
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: scale(1.05);
 }
 
 nav ul a {
-    
-    color: #ffffff;
-    padding: 20px;
+  color: #ffffff;
+  padding: 20px;
 }
 
+/* INDEX PAGE */
+
+/* GALLERY PAGE */
+/* putting parallax image on gallery page */
+.bg-1,
+.bg-2,
+.bg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-1 {
+  background-image: url('https://source.unsplash.com/1000x800');
+  min-height: 100%;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: 0.2s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0;
+}
+
+/* .box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover;
+  transition: 0.5s;
+} */
+
+.box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover {
+  flex: 1 1 50%;
+}
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* REVIEWS PAGE */
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+}
