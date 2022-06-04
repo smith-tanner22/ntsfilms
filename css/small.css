@@ -146,6 +146,35 @@ nav ul a {
 }
 
 /* REVIEWS PAGE */
+.cards {
+  background-color: #587792;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 0.75em;
+  text-align: center;
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+}
+
+section {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+section:hover {
+  transform: scale(1.05);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
 /* FOOTER */
 
