@@ -1,109 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | NTS Films</title>
-    <meta name="description" content="Contact us page">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/medium.css">
-    <link rel="stylesheet" href="css/large.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Contact us page" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lexend:wght@100&family=Varela+Round&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lexend:wght@100&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="js/script.js" type="module"></script>
     <script defer src="js/contactUs.js" type="module"></script>
-</head>
+  </head>
 
-<body>
-    <header>
-        <div id="top-header">
-
-            <nav>
-
-                <ul class="navigation">
-                    <a href="index.html">
-                        <img class="logo" src="images/logo.png" alt="NTS Films Logo">
-                    </a>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                </ul>
-            </nav>
+  <body>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <a href="index.html">
+            <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
+          </a>
         </div>
-    </header>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+
+        <a href="contactus.html">Contact Us</a>
+      </div>
+    </div>
     <main>
-        <h1>Contact Us!</h1>
-        <section class="ftco-section">
-            <div class="container">
-
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="wrapper">
-                            <div class="contact-wrap w-100 p-md-5 p-4">
-                                <div id="form-message-warning" class="mb-4"></div>
-                                <div id="form-message-success" class="mb-4">
-                                    Your message was sent, thank you!
-                                </div>
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="label" for="name">Full Name</label>
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                    placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="label" for="email">Email Address</label>
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="label" for="subject">Subject</label>
-                                                <input type="text" class="form-control" name="subject" id="subject"
-                                                    placeholder="Subject">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="label" for="#">Message</label>
-                                                <textarea name="message" class="form-control" id="message" cols="30"
-                                                    rows="4" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input type="submit" value="Send Message" class="btn btn-primary">
-                                                <div class="submitting"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+      <h1>Contact Us!</h1>
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="wrapper">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <div id="form-message-warning" class="mb-4"></div>
+                  <div id="form-message-success" class="mb-4">
+                    Your message was sent, thank you!
+                  </div>
+                  <form
+                    method="POST"
+                    action="https://formspree.io/f/mlezvvyj"
+                    id="contactForm"
+                    name="contactForm"
+                    class="contactForm"
+                  >
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="name">Full Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            id="name"
+                            placeholder="Name"
+                          />
                         </div>
-
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="email">Email Address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="subject">Subject</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="subject"
+                            id="subject"
+                            placeholder="Subject"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="#">Message</label>
+                          <textarea
+                            name="message"
+                            class="form-control"
+                            id="message"
+                            cols="30"
+                            rows="4"
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input
+                            type="submit"
+                            value="Send Message"
+                            class="btn btn-primary"
+                          />
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
                     </div>
+                  </form>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <hr>
-        <p>&copy;<span id="currentdate"></span> NTS Films, All rights reserved.</p>
-        <p>All images and videos are used by direction of the owner.</p>
-        <p>Last Updated: <span id="lastmodified"></span></p>
+      <hr />
+      <p>
+        &copy;<span id="currentdate"></span> NTS Films, All rights reserved.
+      </p>
+      <p>All images and videos are used by direction of the owner.</p>
+      <p>Last Updated: <span id="lastmodified"></span></p>
     </footer>
-</body>
-
+  </body>
 </html>

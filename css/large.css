@@ -1,0 +1,6 @@
+@media only screen and (min-width: 860px) {
+  .navigation a {
+    text-align: center;
+    font-size: larger;
+  }
+}

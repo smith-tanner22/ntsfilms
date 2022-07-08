@@ -21,7 +21,7 @@ fetch(requestURL)
       h2.textContent = reviews[i].name;
       type.textContent = 'Type:' + reviews[i].type;
       date.textContent = 'Date:' + reviews[i].date;
-      rating.textContent = reviews[i].rating + ' stars';
+      rating.textContent = '⭐⭐⭐⭐⭐';
       review.textContent = reviews[i].review;
       img.setAttribute('src', reviews[i].imageurl);
       img.setAttribute(

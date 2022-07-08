@@ -1,52 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template | NTS Films</title>
-    <meta name="description" content="This is the template page for NTS Films">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/medium.css">
-    <link rel="stylesheet" href="css/large.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+      name="description"
+      content="This is the template page for NTS Films"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lexend:wght@100&family=Varela+Round&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lexend:wght@100&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="js/script.js" type="module"></script>
-</head>
+  </head>
 
-<body>
-    <header>
-        <div id="top-header">
-
-            <nav>
-
-                <ul class="navigation">
-                    <a href="index.html">
-                        <img class="logo" src="images/logo.png" alt="NTS Films Logo">
-                    </a>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                </ul>
-            </nav>
+  <body>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <a href="index.html">
+            <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
+          </a>
         </div>
-    </header>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+
+        <a href="contactus.html">Contact Us</a>
+      </div>
+    </div>
+    <!-- <section class="top-nav">
+      <div>
+        <a href="index.html">
+          <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
+        </a>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </section> -->
+    <!-- <picture>
+        <a href="index.html">
+          <img class="logo" src="images/logo.png" alt="NTS Films logo" />
+        </a>
+      </picture>
+      <section class="headings">
+        <h2>For all your filmmaking needs.</h2>
+      </section> -->
+
+    <!-- <div id="top-header">
+        <nav>
+          <ul class="navigation">
+            <a href="index.html">
+              <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
+            </a>
+            <li><a class="ham" href="#">&#9776;</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> -->
+    <!-- </header> -->
     <main>
-        <h1>Title Content</h1>
-        <p>Sub content will go here.</p>
+      <h1>Title Content</h1>
+      <p>Sub content will go here.</p>
     </main>
     <footer>
-        <hr>
-        <p>&copy;<span id="currentdate"></span> NTS Films, All rights reserved.</p>
-        <p>All images and videos are used by direction of the owner.</p>
-        <p>Last Updated: <span id="lastmodified"></span></p>
+      <hr />
+      <p>
+        &copy;<span id="currentdate"></span> NTS Films, All rights reserved.
+      </p>
+      <p>All images and videos are used by direction of the owner.</p>
+      <p>Last Updated: <span id="lastmodified"></span></p>
     </footer>
-</body>
-
+  </body>
 </html>
