@@ -1,4 +1,9 @@
 @media only screen and (min-width: 680px) {
+  .img-responsive {
+    width: 400%;
+    object-fit: cover;
+    object-position: bottom;
+  }
   /* header img {
     height: auto;
     width: 200px;
