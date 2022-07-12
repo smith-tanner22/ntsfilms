@@ -131,6 +131,30 @@ function updateScroll() {
       .querySelector('#vdo-3')
       .style.setProperty('--item3-right-point', '100%');
   }
+  let forthContent = document.querySelector('#forth-content');
+  if (
+    scrollDirection == 'up' &&
+    Math.floor(forthContent.getBoundingClientRect().top) >= intersecPos
+  ) {
+    document
+      .querySelector('#vdo-4')
+      .style.setProperty('--item4-left-point', '100%');
+    document
+      .querySelector('#vdo-4')
+      .style.setProperty('--item4-right-point', '100%');
+  }
+  let fifthContent = document.querySelector('#fifth-content');
+  if (
+    scrollDirection == 'up' &&
+    Math.floor(fifthContent.getBoundingClientRect().top) >= intersecPos
+  ) {
+    document
+      .querySelector('#vdo-5')
+      .style.setProperty('--item5-left-point', '100%');
+    document
+      .querySelector('#vdo-5')
+      .style.setProperty('--item5-right-point', '100%');
+  }
 }
 
 document.addEventListener('scroll', updateScroll);
