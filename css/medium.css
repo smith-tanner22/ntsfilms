@@ -4,28 +4,4 @@
     object-fit: cover;
     object-position: bottom;
   }
-  /* header img {
-    height: auto;
-    width: 200px;
-  }
-  .navigation a {
-    text-align: center;
-  }
-
-  .navigation li {
-    display: block;
-    flex: 1 1 auto;
-  }
-
-  .navigation li:first-child {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-  }
-
-  nav ul li {
-    flex: 1 1 100%;
-  } */
 }
