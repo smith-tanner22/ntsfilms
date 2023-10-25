@@ -1,5 +1,5 @@
 const requestURL =
-  'https://smith-tanner22.github.io/reviews.github.io/data/reviews.json';
+  'https://smith-tanner22.github.io/reviews.github.io/reviews.json';
 
 fetch(requestURL)
   .then(function (response) {
