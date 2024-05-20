@@ -152,7 +152,7 @@
                       <div class="form-group">
                         <label class="label" for="location">Wedding Location *</label>
                         <input
-                          type="location"
+                          type="text"
                           class="form-control"
                           name="location"
                           id="location"
@@ -180,8 +180,105 @@
                           placeholder="Select an Option"
                           required
                         /> -->
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="label" for="coverage">What kind of coverage are you looking for?</label>
+                            <label for="firstLooksOn">First Looks (On Wedding Day)</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "firstLooksOn"
+                              value="First Looks On"
+                              id= "firstLooksOn"
+                            />
+                            <label for="firstLooksPre">First Looks (Before Wedding Day)</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "firstLooksPre"
+                              value="First Looks Pre"
+                              id= "firstLooksPre"
+                            />
+                            <label for="gettingReady">Getting Ready Shots</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "gettingReady"
+                              value="Getting Ready"
+                              id= "gettingReady"
+                            />
+                            <label for="ceremony">Ceremony Coverage</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "ceremony"
+                              value="Ceremony"
+                              id= "ceremony"
+                            />
+                            <label for="familyPics">Videoing Family Pictures</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "familyPics"
+                              value="Family Pics"
+                              id= "familyPics"
+                            />
+                            <label for="templeExit">Temple Exit</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "templeExit"
+                              value="Temple Exit"
+                              id= "templeExit"
+                            />
+                            <label for="reception">Reception Coverage</label>
+                            <input
+                              type="checkbox"
+                              class="form-control"
+                              name= "reception"
+                              value="Reception"
+                              id= "reception"
+                            />
+                            
+                          </div>
+                          </div>
                       </div>
                       </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="weddingProcess">Where are you in the process of booking a filmmaker? *</label>
+                          <select name="weddingProcess" id="weddingProcess">
+                            <option value="shoppingAround">We are shopping around.</option>
+                            <option value="wantYouButHaveQuestions">Just want some more information.</option>
+                            <option value="wantYouNow">We want to book with you NOW!</option>
+                            <option value="other">Other</option>
+                          </select>
+                          </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="label" for="referrals">How did you hear about us? *</label>
+                              <select name="referrals" id="referrals">
+                                <option value="website">Personal Website</option>
+                                <option value="google">Google</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="vendorReferral">Vendor Referral</option>
+                                <option value="clientReferral">Client Referral</option>
+                                <option value="other">Other</option>
+                                <option value="unknown">Unknown</option>
+                              </select>
+                              <!-- <input
+                                type="text"
+                                class="form-control"
+                                name="relationship"
+                                id="relationship"
+                                placeholder="Select an Option"
+                                required
+                              /> -->
+                            </div>
+                          </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="phone">Phone</label>
@@ -197,7 +294,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="label" for="subject">Subject</label>
+                          <label class="label" for="subject">Subject for Message</label>
                           <input
                             type="text"
                             class="form-control"
@@ -209,14 +306,14 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="label" for="#">Message</label>
+                          <label class="label" for="#">Tell us more about yourself and the wedding you are planning!</label>
                           <textarea
                             name="message"
                             class="form-control"
                             id="message"
                             cols="30"
                             rows="4"
-                            placeholder="Message"
+                            placeholder="Tell us about your wedding vision, questions you have for us, etc.!"
                           ></textarea>
                         </div>
                       </div>
