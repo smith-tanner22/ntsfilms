@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | NTS Films</title>
@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/small.css" />
     <link rel="stylesheet" href="css/medium.css" />
     <link rel="stylesheet" href="css/large.css" />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="stylesheet" href="css/contactus.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,296 +17,296 @@
       rel="stylesheet"
     />
     <script defer src="js/script.js" type="module"></script>
-  </head>
+</head>
 
-  <body>
-    <div class="nav">
-      <input type="checkbox" id="nav-check" />
-      <div class="nav-header">
+<body>
+<div class="nav">
+    <input type="checkbox" id="nav-check" />
+    <div class="nav-header">
         <div class="nav-title">
-          <a href="index.html">
-            <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
-          </a>
+            <a href="index.html">
+                <img class="logo" src="images/logo.png" alt="NTS Films Logo" />
+            </a>
         </div>
-      </div>
-      <div class="nav-btn">
+    </div>
+    <div class="nav-btn">
         <label for="nav-check">
-          <span></span>
-          <span></span>
-          <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </label>
-      </div>
+    </div>
 
-      <div class="nav-links">
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="reviews.html">Reviews</a>
         <a href="contactus.html">Contact Us</a>
-      </div>
     </div>
-    <main>
-      <h1>Contact Us!</h1>
-      <section class="ftco-section">
+</div>
+<main>
+    <h1>Contact Us!</h1>
+    <section class="ftco-section">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-12">
-              <div class="wrapper">
-                <div class="contact-wrap w-100 p-md-5 p-4">
-                  <div id="form-message-warning" class="mb-4"></div>
-                  <form
-                    method="POST"
-                    action="https://formspree.io/f/mlezvvyj"
-                    id="contactForm"
-                    name="contactForm"
-                    class="contactForm"
-                  >
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="name">Your Name *</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="name"
-                            id="name"
-                            placeholder="First Name Last Name"
-                            required
-                          />
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <div class="contact-wrap w-100 p-md-5 p-4">
+                            <div id="form-message-warning" class="mb-4"></div>
+                            <form
+                                method="POST"
+                                action="https://formspree.io/f/mlezvvyj"
+                                id="contactForm"
+                                name="contactForm"
+                                class="contactForm"
+                            >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="name">Your Name *</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="name"
+                                                id="name"
+                                                placeholder="First Name Last Name"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="partnerName">Partner's Full Name (If applicable)</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="partnerName"
+                                                id="partnerName"
+                                                placeholder="First Name Last Name"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="email">Email Address *</label>
+                                            <input
+                                                type="email"
+                                                class="form-control"
+                                                name="email"
+                                                id="email"
+                                                placeholder="MyEmail@Email.com"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="relationship">Relationship To Couple *</label>
+                                            <select name="relationship" id="relationship" class="form-control">
+                                                <option value="bride">Bride</option>
+                                                <option value="groom">Groom</option>
+                                                <option value="planner">Planner</option>
+                                                <option value="parentsBride">Mother/Father of Bride</option>
+                                                <option value="parentsGroom">Mother/Father of Groom</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="instagram">Instagram Handle</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="instagram"
+                                                id="instagram"
+                                                placeholder="@InstaHandle"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="weddingDate">Wedding Date *</label>
+                                            <input
+                                                type="date"
+                                                class="form-control"
+                                                name="weddingDate"
+                                                id="weddingDate"
+                                                placeholder="MM/DD/YYYY"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="location">Wedding Location *</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="location"
+                                                id="location"
+                                                placeholder="Location"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="weddingType">Wedding Type *</label>
+                                            <select name="weddingType" id="weddingType" class="form-control">
+                                                <option value="wedding">Wedding</option>
+                                                <option value="destWedding">Destination Wedding</option>
+                                                <option value="multiWedding">Multi-day Wedding</option>
+                                                <option value="elopement">Elopement</option>
+                                                <option value="templeWedding">Temple Wedding</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label">What kind of coverage are you looking for?</label>
+                                            <div class="form-group">
+                                                <label for="firstLooksOn">First Looks (On Wedding Day)</label>
+                                                <select name="firstLooksOn" id="firstLooksOn" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="firstLooksPre">First Looks (Before Wedding Day)</label>
+                                                <select name="firstLooksPre" id="firstLooksPre" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gettingReady">Getting Ready Shots</label>
+                                                <select name="gettingReady" id="gettingReady" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ceremony">Ceremony Coverage</label>
+                                                <select name="ceremony" id="ceremony" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="familyPics">Videoing Family Pictures</label>
+                                                <select name="familyPics" id="familyPics" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="templeExit">Temple Exit</label>
+                                                <select name="templeExit" id="templeExit" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reception">Reception Coverage</label>
+                                                <select name="reception" id="reception" class="form-control">
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="weddingProcess">Where are you in the process of booking a filmmaker? *</label>
+                                            <select name="weddingProcess" id="weddingProcess" class="form-control">
+                                                <option value="shoppingAround">We are shopping around.</option>
+                                                <option value="wantYouButHaveQuestions">Just want some more information.</option>
+                                                <option value="wantYouNow">We want to book with you NOW!</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="referrals">How did you hear about us? *</label>
+                                            <select name="referrals" id="referrals" class="form-control">
+                                                <option value="website">Personal Website</option>
+                                                <option value="google">Google</option>
+                                                <option value="facebook">Facebook</option>
+                                                <option value="instagram">Instagram</option>
+                                                <option value="vendorReferral">Vendor Referral</option>
+                                                <option value="clientReferral">Client Referral</option>
+                                                <option value="other">Other</option>
+                                                <option value="unknown">Unknown</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label" for="phone">Phone</label>
+                                            <input
+                                                type="tel"
+                                                class="form-control"
+                                                name="phone"
+                                                id="phone"
+                                                placeholder="xxx-xxx-xxxx"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="subject">Subject for Message</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="subject"
+                                                id="subject"
+                                                placeholder="Subject"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="message">Tell us more about yourself and the wedding you are planning!</label>
+                                            <textarea
+                                                name="message"
+                                                class="form-control"
+                                                id="message"
+                                                cols="30"
+                                                rows="4"
+                                                placeholder="Tell us about your wedding vision, questions you have for us, etc.!"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input
+                                                type="submit"
+                                                value="Send Message"
+                                                class="btn btn-primary"
+                                            />
+                                            <div class="submitting"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="partnerName">Partner's Full Name (If applicable)</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="partnerName"
-                            id="partnerName"
-                            placeholder="First Name Last Name"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="email">Email Address *</label>
-                          <input
-                            type="email"
-                            class="form-control"
-                            name="email"
-                            id="email"
-                            placeholder="MyEmail@Email.com"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="relationship">Relationship To Couple *</label>
-                          <select name="relationship" id="relationship" class="form-control">
-                            <option value="bride">Bride</option>
-                            <option value="groom">Groom</option>
-                            <option value="planner">Planner</option>
-                            <option value="parentsBride">Mother/Father of Bride</option>
-                            <option value="parentsGroom">Mother/Father of Groom</option>
-                            <option value="other">Other</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="instagram">Instagram Handle</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="instagram"
-                            id="instagram"
-                            placeholder="@InstaHandle"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="weddingDate">Wedding Date *</label>
-                          <input
-                            type="date"
-                            class="form-control"
-                            name="weddingDate"
-                            id="weddingDate"
-                            placeholder="MM/DD/YYYY"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="location">Wedding Location *</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="location"
-                            id="location"
-                            placeholder="Location"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="weddingType">Wedding Type *</label>
-                          <select name="weddingType" id="weddingType" class="form-control">
-                            <option value="wedding">Wedding</option>
-                            <option value="destWedding">Destination Wedding</option>
-                            <option value="multiWedding">Multi-day Wedding</option>
-                            <option value="elopement">Elopement</option>
-                            <option value="templeWedding">Temple Wedding</option>
-                            <option value="other">Other</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label">What kind of coverage are you looking for?</label>
-                          <div class="form-group">
-                            <label for="firstLooksOn">First Looks (On Wedding Day)</label>
-                            <select name="firstLooksOn" id="firstLooksOn" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="firstLooksPre">First Looks (Before Wedding Day)</label>
-                            <select name="firstLooksPre" id="firstLooksPre" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="gettingReady">Getting Ready Shots</label>
-                            <select name="gettingReady" id="gettingReady" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="ceremony">Ceremony Coverage</label>
-                            <select name="ceremony" id="ceremony" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="familyPics">Videoing Family Pictures</label>
-                            <select name="familyPics" id="familyPics" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="templeExit">Temple Exit</label>
-                            <select name="templeExit" id="templeExit" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="reception">Reception Coverage</label>
-                            <select name="reception" id="reception" class="form-control">
-                              <option value="yes">Yes</option>
-                              <option value="no">No</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="weddingProcess">Where are you in the process of booking a filmmaker? *</label>
-                          <select name="weddingProcess" id="weddingProcess" class="form-control">
-                            <option value="shoppingAround">We are shopping around.</option>
-                            <option value="wantYouButHaveQuestions">Just want some more information.</option>
-                            <option value="wantYouNow">We want to book with you NOW!</option>
-                            <option value="other">Other</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="referrals">How did you hear about us? *</label>
-                          <select name="referrals" id="referrals" class="form-control">
-                            <option value="website">Personal Website</option>
-                            <option value="google">Google</option>
-                            <option value="facebook">Facebook</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="vendorReferral">Vendor Referral</option>
-                            <option value="clientReferral">Client Referral</option>
-                            <option value="other">Other</option>
-                            <option value="unknown">Unknown</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="phone">Phone</label>
-                          <input
-                            type="tel"
-                            class="form-control"
-                            name="phone"
-                            id="phone"
-                            placeholder="xxx-xxx-xxxx"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="subject">Subject for Message</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="subject"
-                            id="subject"
-                            placeholder="Subject"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="message">Tell us more about yourself and the wedding you are planning!</label>
-                          <textarea
-                            name="message"
-                            class="form-control"
-                            id="message"
-                            cols="30"
-                            rows="4"
-                            placeholder="Tell us about your wedding vision, questions you have for us, etc.!"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input
-                            type="submit"
-                            value="Send Message"
-                            class="btn btn-primary"
-                          />
-                          <div class="submitting"></div>
-                        </div>
-                      </div>
                     </div>
-                  </form>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <hr />
-      <p>
+    </section>
+</main>
+<footer>
+    <hr />
+    <p>
         &copy;<span id="currentdate"></span> NTS Films, All rights reserved.
-      </p>
-      <p>All images and videos are used by direction of the owner.</p>
-      <p>Last Updated: <span id="lastmodified"></span></p>
-    </footer>
-  </body>
+    </p>
+    <p>All images and videos are used by direction of the owner.</p>
+    <p>Last Updated: <span id="lastmodified"></span></p>
+</footer>
+</body>
 </html>
