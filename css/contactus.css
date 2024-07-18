@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: 'Lexend', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  main {
+    padding: 20px 12px 10px 20px;
+  }
+  
+  h1 {
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    color: #587792;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: black;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px;
+    letter-spacing: 3px;
+    font-weight: bolder;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .btn-primary {
+    background-color: #587792;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0e1821;
+    color: white;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .checkbox-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .checkbox-item label {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .checkbox-item {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .checkbox-item {
+      width: 100%;
+    }
+  }
+  
+  /* Consistent Form Layout */
+  .contactForm {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contactForm .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contactForm .form-group label {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contactForm .form-group .form-control,
+  .contactForm .form-group select,
+  .contactForm .form-group textarea {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .container {
+    max-width: 800px;
+  }
