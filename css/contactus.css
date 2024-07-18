@@ -77,7 +77,7 @@ label {
 .checkbox-item label {
     font-weight: bold;
     margin: 0;
-    color: yellow;
+    color: teal;
     flex: 1; /* Ensure label takes available space */
 }
 
