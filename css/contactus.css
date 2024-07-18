@@ -76,9 +76,9 @@ label {
 
 .checkbox-item label {
     font-weight: bold;
-    margin: 0;
-    color: teal;
-    flex: 1; /* Ensure label takes available space */
+    color: navy;
+    flex: 1;
+    word-wrap: break-word; /* Ensure text wraps inside the container */
 }
 
 /* Responsive Design */
