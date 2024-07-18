@@ -73,6 +73,8 @@ body {
   .checkbox-item label {
     /* margin-left: 10px; */
     font-weight: bold;
+    margin-right: 50px;
+    color: red;
   }
   
   /* Responsive Design */
