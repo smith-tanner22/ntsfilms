@@ -70,21 +70,21 @@ label {
     width: 100%;
 }
 
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 .checkbox-item label {
-    margin-left: 10px;
     font-weight: bold;
     margin: 0;
-    color: purple;
+    color: yellow;
     flex: 1; /* Ensure label takes available space */
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .checkbox-item {
-        width: calc(50% - 20px);
+        width: calc(50% - 10px);
     }
 }
 
