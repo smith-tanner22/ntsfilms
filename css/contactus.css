@@ -66,7 +66,7 @@ label {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    max-width: 400px;
+    max-width: 100%; /* Ensure it uses available width */
     width: 100%;
 }
 
@@ -76,9 +76,10 @@ label {
 
 .checkbox-item label {
     font-weight: bold;
-    color: navy;
+    color: forestgreen;
     flex: 1;
     word-wrap: break-word; /* Ensure text wraps inside the container */
+    display: inline-block; /* Ensure it respects its parent's width */
 }
 
 /* Responsive Design */
