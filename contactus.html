@@ -54,9 +54,6 @@
               <div class="wrapper">
                 <div class="contact-wrap w-100 p-md-5 p-4">
                   <div id="form-message-warning" class="mb-4"></div>
-                  <!-- <div id="form-message-success" class="mb-4">
-                    Your message was sent, thank you!
-                  </div> -->
                   <form
                     method="POST"
                     action="https://formspree.io/f/mlezvvyj"
@@ -168,35 +165,56 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <div class="form-group checkbox-group">
+                        <div class="form-group">
                           <label class="label">What kind of coverage are you looking for?</label>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="firstLooksOn" value="First Looks On" id="firstLooksOn" />
+                          <div class="form-group">
                             <label for="firstLooksOn">First Looks (On Wedding Day)</label>
+                            <select name="firstLooksOn" id="firstLooksOn" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="firstLooksPre" value="First Looks Pre" id="firstLooksPre" />
+                          <div class="form-group">
                             <label for="firstLooksPre">First Looks (Before Wedding Day)</label>
+                            <select name="firstLooksPre" id="firstLooksPre" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="gettingReady" value="Getting Ready" id="gettingReady" />
+                          <div class="form-group">
                             <label for="gettingReady">Getting Ready Shots</label>
+                            <select name="gettingReady" id="gettingReady" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="ceremony" value="Ceremony" id="ceremony" />
+                          <div class="form-group">
                             <label for="ceremony">Ceremony Coverage</label>
+                            <select name="ceremony" id="ceremony" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="familyPics" value="Family Pics" id="familyPics" />
+                          <div class="form-group">
                             <label for="familyPics">Videoing Family Pictures</label>
+                            <select name="familyPics" id="familyPics" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="templeExit" value="Temple Exit" id="templeExit" />
+                          <div class="form-group">
                             <label for="templeExit">Temple Exit</label>
+                            <select name="templeExit" id="templeExit" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
-                          <div class="checkbox-item">
-                            <input type="checkbox" class="form-control" name="reception" value="Reception" id="reception" />
+                          <div class="form-group">
                             <label for="reception">Reception Coverage</label>
+                            <select name="reception" id="reception" class="form-control">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
                           </div>
                         </div>
                       </div>

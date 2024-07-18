@@ -52,49 +52,6 @@ label {
     color: white;
 }
 
-.checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.checkbox-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    max-width: 100%; /* Ensure it uses available width */
-    width: 100%;
-}
-
-.checkbox-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.checkbox-item label {
-    font-weight: bold;
-    color: forestgreen;
-    flex: 1;
-    word-wrap: break-word; /* Ensure text wraps inside the container */
-    display: inline-block; /* Ensure it respects its parent's width */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .checkbox-item {
-        width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 480px) {
-    .checkbox-item {
-        width: 100%;
-    }
-}
-
 /* Consistent Form Layout */
 .contactForm {
     max-width: 800px;
