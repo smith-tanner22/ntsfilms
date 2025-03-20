@@ -179,10 +179,12 @@ body {
   margin-top: 30px;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  color: white;
 }
 .prg {
   font-size: 20px;
   line-height: 1.3em;
+  color: white;
 }
 a {
   color: #fff;
@@ -251,6 +253,6 @@ a {
   .content.-three,
   .content.-four,
   .content.-five {
-    padding-top: 300px;
+    padding-top: 400px;
   }
 }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Tree | NTS Films</title>
+    <meta
+      name="description"
+      content="This is the link tree page for NTS Films"
+    />
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+    <!-- Favicons, Google Fonts, Scripts, etc. -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lexend:wght@100&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="js/script.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div class="nav-title">
+          <a href="index.html">
+            <img
+              class="logo"
+              src="images/NTS Films_A1_White Circle.png"
+              alt="NTS Films Logo"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contactus.html">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="link-tree">
+        <div class="profile-pic-container">
+            <img src="images/profile-pic.jpg" alt="Profile Photo" class="profile-pic">
+        </div>
+      <h1>NTS Films Link Tree</h1>
+      <div class="link-tree-buttons">
+        <a href="https://www.youtube.com/@Tanner22Films" class="link-btn"><span class="icon">▶️</span>YouTube</a>
+        <a href="https://www.instagram.com/ntsfilms_?igsh=MWNrNmRvMXVya2h4bA%3D%3D&utm_source=qr" class="link-btn"><span class="icon">📸</span>Instagram</a>
+        <a href="contactus.html" class="link-btn">
+            <span class="icon">📧</span>
+            Contact Us
+          </a>
+          <a href="index.html" class="link-btn">
+            <span class="icon">🏠</span>
+            Website
+          </a>
+          <a href="gallery.html" class="link-btn">
+            <span class="icon">🖼️</span>
+            Gallery
+          </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <hr />
+      <p>&copy;<span id="currentdate"></span> NTS Films, All rights reserved.</p>
+      <p>All images and videos are used by direction of the owner.</p>
+      <p>Last Updated: <span id="lastmodified"></span></p>
+    </footer>
+  </body>
+</html>
