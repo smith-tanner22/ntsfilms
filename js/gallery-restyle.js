@@ -1,5 +1,9 @@
 // Auto-generated gallery restyle JS
 const videos = [
+    { title: "Sydney & Jerick", youtubeId: "sgeYX_kqhcI", description: "Pima Arizona" },
+    { title: "Shayla & Daniel", youtubeId: "OzllojeCJQ0", description: "Safford Arizona" },
+    { title: "Reese & Braeden", youtubeId: "S2-2IoA2g7I", description: "Gilbert Arizona Temple" },
+    { title: "Reed & Camryn", youtubeId: "nOOzqe85-xY", description: "The Gila Valley Arizona Temple" },
     { title: "Abby & Cole", youtubeId: "OzllojeCJQ0", description: "Gilbert Arizona" },
     { title: "Delgado's", youtubeId: "_GzBztgJvvo", description: "Gilbert Arizona Temple" },
     { title: "Brooklyn & Dillon", youtubeId: "ubU99HAWbmg", description: "Durango Colorado" },

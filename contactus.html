@@ -150,7 +150,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label" for="location">Wedding Location *</label>
+                                            <label class="label" for="location">Wedding Location | Venue*</label>
                                             <input
                                                 type="text"
                                                 class="form-control"
@@ -162,6 +162,49 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+  <div class="form-group">
+    <label class="label">Wedding Type (select all that apply) *</label>
+
+    <div class="checkbox-group" id="weddingTypeGroup">
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="wedding">
+        <span>Wedding</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="destWedding">
+        <span>Destination Wedding</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="multiWedding">
+        <span>Multi-day Wedding</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="elopement">
+        <span>Elopement</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="templeWedding">
+        <span>LDS Temple Wedding</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="catholicWedding">
+        <span>Catholic Wedding</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" name="weddingType[]" value="other">
+        <span>Other</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+                                    <!-- <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label" for="weddingType">Wedding Type *</label>
                                             <select name="weddingType" id="weddingType" class="form-control">
@@ -170,10 +213,11 @@
                                                 <option value="multiWedding">Multi-day Wedding</option>
                                                 <option value="elopement">Elopement</option>
                                                 <option value="templeWedding">Temple Wedding</option>
+                                                <option value="catholicWedding">CatholicWedding</option>
                                                 <option value="other">Other</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="label">What kind of coverage are you looking for?</label>
@@ -237,6 +281,30 @@
                                                 <option value="wantYouNow">We want to book with you NOW!</option>
                                                 <option value="other">Other</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="weddingPlanner">Wedding Planner?</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="weddingPlanner"
+                                                id="weddingPlanner"
+                                                placeholder="Name and Instagram Handle"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="label" for="weddingPhotographer">Wedding Photographer?</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                name="weddingPhotographer"
+                                                id="weddingPhotographer"
+                                                placeholder="Name and Instagram Handle"
+                                            />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -311,6 +379,20 @@
         </div>
     </section>
 </main>
+<script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", (e) => {
+    const checks = form.querySelectorAll('input[name="weddingType[]"]');
+    const anyChecked = Array.from(checks).some(c => c.checked);
+
+    if (!anyChecked) {
+      e.preventDefault();
+      alert("Please select at least one Wedding Type.");
+    }
+  });
+</script>
+
 <footer>
     <hr />
     <p>
