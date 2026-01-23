@@ -36,6 +36,7 @@ const videos = [
     { title: "Kason & Kelsey", youtubeId: "_l47bjkPnKs", description: "Gila Valley Arizona" },
     { title: "Willow & Ryan", youtubeId: "BY-nKruxzWc", description: "Mesa Arizona Temple" },
     { title: "Sadie & Justin", youtubeId: "MbTo6YwdsEg", description: "Gila Valley Arizona" },
+    { title: "Bailey & Luke", youtubeId: "LxnVmj3u9Eg", description: "Gila Valley Arizona" },
     { title: "Ian & Jessica", youtubeId: "YutU8HhDMAI", description: "Mt. Graham Arizona" },
     { title: "Gentry & Stephen", youtubeId: "iFlNCcWnuCs", description: "Gilbert Arizona" },
     { title: "Callie & Oliver", youtubeId: "9Cq2VfoVVzM", description: "The Gila Valley Arizona Temple" },
