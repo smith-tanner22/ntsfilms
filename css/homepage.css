@@ -190,6 +190,28 @@ a {
   color: #fff;
   text-decoration: underline;
 }
+/* Keep the fixed video from showing through/under the footer on all screen sizes */
+footer {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  /* flow-root contains child margins (e.g. the <hr>) so the opaque background
+     sits flush against .mainContent and no video peeks through the gap */
+  display: flow-root;
+}
+/* Anchor for pinning the video to the bottom of the content (see homepage.js) */
+.mainContent {
+  position: relative;
+}
+/* When scrolled to the end, the video stops being viewport-fixed and pins to
+   the bottom of .mainContent so it never spills into the footer / the gap
+   above it. Applied on all screen sizes. */
+.vdo-wrap.-stop {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  height: 100vh;
+}
 @media screen and (orientation: landscape) {
   .vdo-list {
     display: flex;

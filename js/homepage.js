@@ -160,6 +160,30 @@ function updateScroll() {
 document.addEventListener('scroll', updateScroll);
 updateScroll();
 
+// Keep the (otherwise viewport-fixed) video contained within .mainContent so it
+// never scrolls down into the footer or the gap above it. Once the bottom of the
+// viewport reaches the bottom of .mainContent, pin the video there instead.
+let mainContentElm = document.querySelector('.mainContent');
+let vdoWrapElm = document.querySelector('.vdo-wrap');
+// Leave the mobile layout (<= 500px) behaving as it did before.
+let notMobile = window.matchMedia('(min-width: 501px)');
+function pinVideoWithinMain() {
+  if (!notMobile.matches) {
+    vdoWrapElm.classList.remove('-stop');
+    return;
+  }
+  let mainBottomDoc =
+    mainContentElm.getBoundingClientRect().bottom + window.scrollY;
+  if (window.scrollY + window.innerHeight >= mainBottomDoc) {
+    vdoWrapElm.classList.add('-stop');
+  } else {
+    vdoWrapElm.classList.remove('-stop');
+  }
+}
+document.addEventListener('scroll', pinVideoWithinMain);
+window.addEventListener('resize', pinVideoWithinMain);
+pinVideoWithinMain();
+
 let allVdoElm = document.querySelectorAll('.vdo');
 function playPauseVdo(vdoCtrlBtn) {
   if (vdoCtrlBtn.classList.contains('-pause')) {

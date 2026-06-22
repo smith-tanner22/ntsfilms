@@ -1,6 +1,11 @@
 // Auto-generated gallery restyle JS
 const videos = [
-    { title: "Danielle & Sebastian", youtubeId: "-dc-Hk7oERE", description: "Solomon Arizona" },
+  { title: "Garrett & Taylen", youtubeId: "b33YtDNGfr0", description: "The Gila Valley Arizona Temple" },
+  { title: "Hallie & Keenen", youtubeId: "3TbgYIhGnaM", description: "Snowflake Arizona Temple" },
+  { title: "Connor & Jaycie", youtubeId: "MIYsV71c6Fw", description: "Mesa Arizona Temple" },
+  { title: "Jake & Erin", youtubeId: "Lb7KSsLfVyA", description: "Mesa Arizona Temple" },
+  { title: "Cassie & Tony", youtubeId: "7vIeCFKd96A", description: "Pima Arizona" },  
+  { title: "Danielle & Sebastian", youtubeId: "-dc-Hk7oERE", description: "Solomon Arizona" },
     { title: "Seth & Hanna", youtubeId: "tEoNbD_29Q0", description: "The Gila Valley Arizona Temple" },
     { title: "Addy & Tucker", youtubeId: "gQ7Usti-s_8", description: "The Gila Valley Arizona Temple" },
     { title: "Whitney & Jacob", youtubeId: "ivra6FFpMyA", description: "Alpine Arizona" },
