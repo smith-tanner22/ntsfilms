@@ -17,8 +17,6 @@ fetch(requestURL)
       h2.classList.add('cardTitle');
       let type = document.createElement('p');
       type.classList.add('cardType');
-      let date = document.createElement('p');
-      date.classList.add('cardDate');
       let rating = document.createElement('p');
       rating.classList.add('cardRating');
       let review = document.createElement('p');
@@ -27,8 +25,7 @@ fetch(requestURL)
       img.classList.add('cardImg');
 
       h2.textContent = reviews[i].name;
-      type.textContent = 'Type:' + reviews[i].type;
-      date.textContent = 'Date:' + reviews[i].date;
+      type.textContent = 'Type: ' + reviews[i].type;
       rating.textContent = '⭐⭐⭐⭐⭐';
       review.textContent = reviews[i].review;
       img.setAttribute('src', reviews[i].imageurl);
@@ -46,7 +43,6 @@ fetch(requestURL)
       // testimonial.appendChild(img);
       card.appendChild(h2);
       card.appendChild(type);
-      card.appendChild(date);
       card.appendChild(rating);
       card.appendChild(review);
       card.appendChild(img);
