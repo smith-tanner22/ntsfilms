@@ -1,0 +1,36 @@
+name: Update gallery from YouTube
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # daily at 13:00 UTC (~6am Arizona)
+  workflow_dispatch: {} # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate json/videos.json
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/generate-gallery.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- json/videos.json; then
+            echo "No changes to json/videos.json."
+          else
+            git add json/videos.json
+            git commit -m "Auto-update gallery from YouTube"
+            git push
+          fi
