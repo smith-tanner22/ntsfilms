@@ -54,16 +54,28 @@ const legacyVideos = [
     { title: "Kallee & Eldon", youtubeId: "N-1tl5nkM04", description: "Gilbert Arizona Temple" },
   ];
   
-  function createCard(video) {
+  function createCard(video, index) {
     const card = document.createElement('div');
     card.className = 'video-card';
-  
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Watch "${video.title}" on YouTube`);
+    card.style.setProperty('--stagger-index', Math.min(index, 12));
+
+    const openVideo = () => {
+      window.open(`https://www.youtube.com/watch?v=${video.youtubeId}`, '_blank', 'noopener,noreferrer');
+    };
+    card.addEventListener('click', openVideo);
+    card.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+        ev.preventDefault();
+        openVideo();
+      }
+    });
+
     const thumbWrapper = document.createElement('div');
     thumbWrapper.className = 'thumbnail-wrapper';
-    thumbWrapper.addEventListener('click', () => {
-      window.open(`https://www.youtube.com/watch?v=${video.youtubeId}`, '_blank', 'noopener,noreferrer');
-    });
-  
+
     const img = document.createElement('img');
     img.src = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
     img.alt = video.title;
@@ -108,7 +120,7 @@ const legacyVideos = [
           ...auto,
           ...legacyVideos.filter(v => !seen.has(v.youtubeId)),
         ];
-        merged.forEach(v => container.appendChild(createCard(v)));
+        merged.forEach((v, i) => container.appendChild(createCard(v, i)));
       });
   });
   

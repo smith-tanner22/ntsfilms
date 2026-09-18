@@ -20,8 +20,6 @@
       content="This is the template page for NTS Films"
     />
     <link rel="stylesheet" href="css/small.css" />
-    <link rel="stylesheet" href="css/medium.css" />
-    <link rel="stylesheet" href="css/large.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,20 +28,6 @@
       rel="stylesheet"
     />
     <script defer src="js/script.js" type="module"></script>
-    <script defer src="js/gallery.js" type="module"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
       <link rel="stylesheet" href="css/gallery-restyle.css" />
     <script defer src="js/gallery-restyle.js"></script>
 </head>
@@ -86,12 +70,5 @@
       <p>All images and videos are used by direction of the owner.</p>
       <p>Last Updated: <span id="lastmodified"></span></p>
     </footer>
-    <script type="text/javascript">
-      $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-        //alert("clicked"); //to test this function ran
-        event.preventDefault();
-        $(this).ekkoLightbox();
-      });
-    </script>
   </body>
 </html>

@@ -46,6 +46,7 @@ function getOverlapContent(intersecPosition) {
 let dataItem;
 let getScrollTop = 0;
 let newPoint = 100;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function updateScroll() {
   // GET SCROLL DIRECTION FIRST
@@ -56,12 +57,14 @@ function updateScroll() {
   let intersecPos = Math.floor(floatingElmRec.height) + floatingElmRec.top;
 
   if (getOverlapContent(intersecPos)) {
-    newPoint = Math.round(
-      ((getOverlapContent(intersecPos).getBoundingClientRect().top -
-        floatingElmRec.top) /
-        floatingElmRec.height) *
-        100
-    );
+    newPoint = prefersReducedMotion
+      ? 0
+      : Math.round(
+          ((getOverlapContent(intersecPos).getBoundingClientRect().top -
+            floatingElmRec.top) /
+            floatingElmRec.height) *
+            100
+        );
     dataItem = getOverlapContent(intersecPos).getAttribute('data-item');
 
     newPoint = newPoint < 0 ? 0 : newPoint;

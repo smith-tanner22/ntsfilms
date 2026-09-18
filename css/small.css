@@ -1,4 +1,10 @@
 /* General Rules */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 main {
   padding: 20px 12px 10px 20px;
 }
@@ -68,13 +74,20 @@ p {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
-  transition: all 0.2s ease-in-out;
+  transition: transform 160ms var(--ease-out), border-color 160ms var(--ease-out);
 }
 
-.nav > .nav-links > a:hover {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .nav > .nav-links > a:hover {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    transform: scale(1.05);
+  }
+}
+
+.nav > .nav-links > a:active {
+  transform: scale(0.97);
+  transition: transform 120ms var(--ease-out);
 }
 
 .nav > #nav-check {
@@ -112,156 +125,38 @@ p {
     display: block;
     width: 100%;
     background-color: #0e1821;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
+    max-height: 25vh;
+    overflow-y: auto;
     top: 50px;
     left: 0px;
     margin-top: 160px;
 
     z-index: 2;
-    overflow: hidden;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 300ms var(--ease-drawer), opacity 300ms var(--ease-drawer), visibility 0s linear 300ms;
   }
   .nav > .nav-links > a {
     display: block;
     width: 100%;
   }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
-  }
   .nav > #nav-check:checked ~ .nav-links {
-    height: calc(25vh);
-    overflow-y: auto;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 300ms var(--ease-drawer), opacity 300ms var(--ease-drawer), visibility 0s linear 0s;
   }
 }
 
-.navigation {
-  list-style-type: none;
-  list-style: none;
-  display: flex;
-
-  align-items: center;
-  padding: 0.75em;
-  background-color: #0e1821;
-  letter-spacing: 0.2em;
-  font-size: 20px;
-  top: 0;
-  width: 100%;
-}
-
-.navigation a {
-  float: right;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-.navigation ul {
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.navigation a:hover {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  transform: scale(1.05);
-}
-
-nav ul a {
-  color: #ffffff;
-  padding: 20px;
-}
-
-.responsive li {
-  display: block;
-}
-
-/* GALLERY PAGE */
-
-.cardContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 2em;
-}
-
-.gallery-item {
-  background: #587792;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  padding: 1.5em;
-  border-radius: 1em;
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  transition: all 0.3s ease-in-out;
-}
-
-.gallery-item:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-  transform: scale(1.05);
-}
-
-.img-responsive {
-  width: 100%;
-  border-radius: 0.4em;
-  transition: all 0.3s ease-in-out;
-}
-
-.img-responsive:hover {
-  transform: scale(1.1);
-}
-
-.gallery-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-button.btn-play {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  padding: 0;
-  margin: 0;
-  margin-left: -15px;
-  border: 0;
-  border-radius: 0;
-  outline: 0 !important;
-  width: 100%;
-  background-color: transparent;
-  color: rgba(245, 245, 245, 0.8);
-}
-button.btn-play:hover,
-button.btn-play:active,
-button.btn-play:visited,
-button.btn-play:focus {
-  color: rgba(255, 255, 255, 1);
-}
-button.btn-play .glyphicon {
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  background-color: inherit;
-  font-size: 64px;
-}
-
-.glyphicon-play:before {
-  content: '▶';
-}
-
-.glyphicon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+@media (prefers-reduced-motion: reduce) {
+  .nav > .nav-links,
+  .nav > #nav-check:checked ~ .nav-links {
+    transform: none;
+    transition: opacity 150ms linear, visibility 0s linear;
+  }
 }
 
 /* REVIEWS PAGE */
@@ -335,13 +230,6 @@ button.btn-play .glyphicon {
   margin-bottom: 10px;
 }
 
-/* SUBMITREVIEW PAGE */
-
-.submitReviewForm {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
 .container {
   position: relative;
   z-index: 1;

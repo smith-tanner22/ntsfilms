@@ -11,30 +11,80 @@
     border-radius: 12px;
     overflow: hidden;
     background: #1e293b;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+    animation: card-in 350ms var(--ease-out) forwards;
+    animation-delay: calc(var(--stagger-index, 0) * 45ms);
   }
-  
-  .video-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+
+  @keyframes card-in {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
-  
+
+  @media (hover: hover) and (pointer: fine) {
+    .video-card {
+      transition: transform 250ms var(--ease-in-out), box-shadow 250ms var(--ease-in-out);
+    }
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    }
+    .video-card:hover:active {
+      transform: translateY(-8px) scale(0.97);
+    }
+  }
+
+  .video-card:active {
+    transform: scale(0.97);
+    transition: transform 120ms var(--ease-out);
+  }
+
+  .video-card:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 3px;
+  }
+
   .thumbnail-wrapper {
     position: relative;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    cursor: pointer;
   }
-  
+
   .thumbnail-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
   }
-  
-  .video-card:hover .thumbnail-wrapper img {
-    transform: scale(1.05);
+
+  @media (hover: hover) and (pointer: fine) {
+    .thumbnail-wrapper img {
+      transition: transform 250ms var(--ease-in-out);
+    }
+    .video-card:hover .thumbnail-wrapper img {
+      transform: scale(1.05);
+    }
+    .thumbnail-wrapper:hover .play-btn {
+      transition: background 250ms var(--ease-in-out);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .video-card {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .video-card:hover,
+    .video-card:hover:active {
+      transform: none;
+    }
+    .video-card:hover .thumbnail-wrapper img {
+      transform: none;
+    }
   }
   
   .gradient-overlay {

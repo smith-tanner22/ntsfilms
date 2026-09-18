@@ -136,6 +136,18 @@ body {
   box-sizing: border-box;
   border: 2px solid #fff;
   z-index: 3;
+  transition: transform 160ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vdo-control:hover {
+    transform: scale(1.05);
+  }
+}
+
+.vdo-control:active {
+  transform: scale(0.97);
+  transition: transform 120ms var(--ease-out);
 }
 .vdo-control.-pause .control-button:before {
   display: none;
@@ -174,16 +186,16 @@ body {
 }
 .title {
   font-size: 50px;
-  line-height: 1.2em;
+  line-height: 1.1em;
   font-weight: 600;
   margin-top: 30px;
-  letter-spacing: 1px;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
   color: white;
 }
 .prg {
   font-size: 20px;
-  line-height: 1.3em;
+  line-height: 1.5em;
   color: white;
 }
 a {
