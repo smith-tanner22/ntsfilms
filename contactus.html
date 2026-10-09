@@ -142,6 +142,46 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-12">
+                                        <section class="availability-card" aria-labelledby="availabilityHeading">
+                                            <div class="availability-copy">
+                                                <p class="availability-kicker">Availability</p>
+                                                <h2 id="availabilityHeading">Check your date before you inquire.</h2>
+                                                <p>
+                                                    This calendar syncs from confirmed filming days and travel blocks.
+                                                </p>
+                                                <div class="availability-status" id="availabilityStatus" aria-live="polite">
+                                                    Loading synced availability...
+                                                </div>
+                                            </div>
+                                            <div class="availability-calendar" aria-label="Availability calendar preview">
+                                                <div class="availability-toolbar">
+                                                    <button type="button" class="calendar-nav" id="prevMonth" aria-label="Previous month">
+                                                        <span aria-hidden="true">&lt;</span>
+                                                    </button>
+                                                    <div class="calendar-month" id="calendarMonth"></div>
+                                                    <button type="button" class="calendar-nav" id="nextMonth" aria-label="Next month">
+                                                        <span aria-hidden="true">&gt;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="calendar-legend" aria-label="Calendar status legend">
+                                                    <span><i class="legend-dot is-open"></i>Open</span>
+                                                    <span><i class="legend-dot is-booked"></i>Unavailable</span>
+                                                </div>
+                                                <div class="calendar-weekdays" aria-hidden="true">
+                                                    <span>Sun</span>
+                                                    <span>Mon</span>
+                                                    <span>Tue</span>
+                                                    <span>Wed</span>
+                                                    <span>Thu</span>
+                                                    <span>Fri</span>
+                                                    <span>Sat</span>
+                                                </div>
+                                                <div class="calendar-grid" id="availabilityGrid"></div>
+                                            </div>
+                                        </section>
+                                    </div>
+
                                     <div id="weddingFields" class="conditional-section" data-section="wedding">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -502,9 +542,20 @@
   const projectGoal = document.getElementById("projectGoal");
   const messageLabel = document.getElementById("messageLabel");
   const message = document.getElementById("message");
-  const templeWedding = document.getElementById("templeWedding");
-  const templeExitField = document.getElementById("templeExitField");
-  const templeExit = document.getElementById("templeExit");
+	  const templeWedding = document.getElementById("templeWedding");
+	  const templeExitField = document.getElementById("templeExitField");
+	  const templeExit = document.getElementById("templeExit");
+	  const availabilityGrid = document.getElementById("availabilityGrid");
+	  const calendarMonth = document.getElementById("calendarMonth");
+	  const availabilityStatus = document.getElementById("availabilityStatus");
+	  const prevMonth = document.getElementById("prevMonth");
+	  const nextMonth = document.getElementById("nextMonth");
+	  const weddingDate = document.getElementById("weddingDate");
+	  const projectDate = document.getElementById("projectDate");
+	  let calendarViewDate = new Date();
+	  let selectedAvailabilityDate = "";
+	  let unavailableDates = new Set();
+	  let availabilityLoaded = false;
 
   const projectPrompts = {
     corporate: {
@@ -584,20 +635,162 @@
     }
   }
 
-  function updateProjectPrompts(type) {
-    const prompt = projectPrompts[type] || projectPrompts.other;
-    projectFocusLabel.textContent = prompt.focusLabel;
+	  function updateProjectPrompts(type) {
+	    const prompt = projectPrompts[type] || projectPrompts.other;
+	    projectFocusLabel.textContent = prompt.focusLabel;
     projectGoalLabel.textContent = prompt.goalLabel;
     projectGoal.placeholder = prompt.goalPlaceholder;
     messageLabel.textContent = prompt.messageLabel;
     message.placeholder = prompt.messagePlaceholder;
     projectFocus.innerHTML = '<option value="">Select one</option>' + prompt.options
-      .map((option) => `<option value="${option}">${option}</option>`)
-      .join("");
-  }
+	      .map((option) => `<option value="${option}">${option}</option>`)
+	      .join("");
+	  }
 
-  function updateForm() {
-    const type = projectType.value;
+	  function formatCalendarDate(date) {
+	    const year = date.getFullYear();
+	    const month = String(date.getMonth() + 1).padStart(2, "0");
+	    const day = String(date.getDate()).padStart(2, "0");
+	    return `${year}-${month}-${day}`;
+	  }
+
+	  function formatReadableDate(date) {
+	    return date.toLocaleDateString("en-US", {
+	      weekday: "long",
+	      month: "long",
+	      day: "numeric",
+	      year: "numeric"
+	    });
+	  }
+
+	  async function loadAvailabilityData() {
+	    try {
+	      const response = await fetch(`json/availability.json?v=${Date.now()}`, {
+	        cache: "no-store"
+	      });
+
+	      if (!response.ok) {
+	        throw new Error("Availability file could not be loaded.");
+	      }
+
+	      const availability = await response.json();
+	      unavailableDates = new Set(availability.unavailableDates || []);
+	      availabilityLoaded = true;
+	      availabilityStatus.textContent = "Select an available date to add it to your inquiry.";
+	    } catch (error) {
+	      availabilityLoaded = false;
+	      unavailableDates = new Set();
+	      availabilityStatus.classList.add("is-hold");
+	      availabilityStatus.textContent = "Availability could not load right now. You can still send an inquiry.";
+	    }
+
+	    renderAvailabilityCalendar();
+	  }
+
+	  function getAvailabilityStatus(date) {
+	    const today = new Date();
+	    today.setHours(0, 0, 0, 0);
+
+	    if (date < today) {
+	      return "past";
+	    }
+
+	    if (!availabilityLoaded) {
+	      return "loading";
+	    }
+
+	    return unavailableDates.has(formatCalendarDate(date)) ? "booked" : "open";
+	  }
+
+	  function applySelectedDateToFields(date) {
+	    const formattedDate = formatCalendarDate(date);
+	    const readableDate = formatReadableDate(date);
+
+	    selectedAvailabilityDate = formattedDate;
+
+	    if (projectType.value === "wedding") {
+	      weddingDate.value = formattedDate;
+	    } else if (projectType.value) {
+	      projectDate.value = readableDate;
+	    }
+	  }
+
+	  function updateAvailabilityMessage(date, status) {
+	    availabilityStatus.classList.remove("is-open", "is-booked", "is-hold");
+
+	    if (status === "open") {
+	      availabilityStatus.classList.add("is-open");
+	      availabilityStatus.textContent = `${formatReadableDate(date)} currently looks open.`;
+	      return;
+	    }
+
+	    if (status === "booked") {
+	      availabilityStatus.classList.add("is-booked");
+	      availabilityStatus.textContent = `${formatReadableDate(date)} is currently marked unavailable.`;
+	      return;
+	    }
+
+	    if (status === "loading") {
+	      availabilityStatus.textContent = "Availability is still loading. Please try that date again in a moment.";
+	      return;
+	    }
+
+	    availabilityStatus.textContent = "Past dates are not available for new inquiries.";
+	  }
+
+	  function renderAvailabilityCalendar() {
+	    const year = calendarViewDate.getFullYear();
+	    const month = calendarViewDate.getMonth();
+	    const firstDay = new Date(year, month, 1);
+	    const daysInMonth = new Date(year, month + 1, 0).getDate();
+	    const leadingBlanks = firstDay.getDay();
+
+	    calendarMonth.textContent = firstDay.toLocaleDateString("en-US", {
+	      month: "long",
+	      year: "numeric"
+	    });
+
+	    availabilityGrid.innerHTML = "";
+
+	    for (let i = 0; i < leadingBlanks; i++) {
+	      const emptyCell = document.createElement("span");
+	      emptyCell.className = "calendar-day is-empty";
+	      availabilityGrid.appendChild(emptyCell);
+	    }
+
+	    for (let day = 1; day <= daysInMonth; day++) {
+	      const date = new Date(year, month, day);
+	      const status = getAvailabilityStatus(date);
+	      const formattedDate = formatCalendarDate(date);
+	      const dayButton = document.createElement("button");
+
+	      dayButton.type = "button";
+	      dayButton.className = `calendar-day is-${status}`;
+	      dayButton.textContent = day;
+		      dayButton.setAttribute("aria-label", `${formatReadableDate(date)}: ${status === "booked" ? "unavailable" : status}`);
+
+	      if (formattedDate === selectedAvailabilityDate) {
+	        dayButton.classList.add("is-selected");
+	      }
+
+	      if (status === "open") {
+	        dayButton.addEventListener("click", () => {
+	          applySelectedDateToFields(date);
+	          updateAvailabilityMessage(date, status);
+	          renderAvailabilityCalendar();
+	        });
+	      } else {
+	        dayButton.addEventListener("click", () => {
+	          updateAvailabilityMessage(date, status);
+	        });
+	      }
+
+	      availabilityGrid.appendChild(dayButton);
+	    }
+	  }
+
+	  function updateForm() {
+	    const type = projectType.value;
     const isWedding = type === "wedding";
     const isProject = type && !isWedding;
 
@@ -611,11 +804,24 @@
       message.placeholder = "Tell us about your wedding vision, questions you have for us, etc.!";
     }
 
-    updateTempleExit();
-  }
+	    updateTempleExit();
 
-  projectType.addEventListener("change", updateForm);
-  templeWedding.addEventListener("change", updateTempleExit);
+	    if (selectedAvailabilityDate) {
+	      const [year, month, day] = selectedAvailabilityDate.split("-").map(Number);
+	      applySelectedDateToFields(new Date(year, month - 1, day));
+	    }
+	  }
+
+	  projectType.addEventListener("change", updateForm);
+	  templeWedding.addEventListener("change", updateTempleExit);
+	  prevMonth.addEventListener("click", () => {
+	    calendarViewDate = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() - 1, 1);
+	    renderAvailabilityCalendar();
+	  });
+	  nextMonth.addEventListener("click", () => {
+	    calendarViewDate = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() + 1, 1);
+	    renderAvailabilityCalendar();
+	  });
 
   form.addEventListener("submit", (e) => {
     if (projectType.value === "wedding") {
@@ -629,8 +835,10 @@
     }
   });
 
-  updateForm();
-</script>
+	  updateForm();
+		  renderAvailabilityCalendar();
+		  loadAvailabilityData();
+		</script>
 
 <footer>
     <hr />

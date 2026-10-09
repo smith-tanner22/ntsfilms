@@ -8,6 +8,7 @@
     "snowpack": "^3.8.8"
   },
   "scripts": {
-    "start": "snowpack dev"
+    "start": "snowpack dev",
+    "availability": "node scripts/generate-availability.mjs"
   }
 }
