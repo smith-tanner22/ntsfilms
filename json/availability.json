@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T15:51:16.518Z",
+  "generatedAt": "2026-10-13T19:39:50.372Z",
   "timezone": "America/Phoenix",
   "blockingCategories": [
     "FILMING",
@@ -75,6 +75,7 @@
     "2026-12-01",
     "2026-12-02",
     "2026-12-16",
+    "2026-12-18",
     "2026-12-19",
     "2026-12-23",
     "2026-12-24",
@@ -94,6 +95,6 @@
   "categoryCounts": {
     "DELIVERY": 5,
     "FILMING": 63,
-    "OTHER": 7
+    "OTHER": 8
   }
 }
