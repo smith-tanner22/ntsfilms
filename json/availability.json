@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T17:59:57.662Z",
+  "generatedAt": "2026-11-11T18:12:46.195Z",
   "timezone": "America/Phoenix",
   "blockingCategories": [
     "FILMING",
@@ -100,6 +100,6 @@
     "DELIVERY": 4,
     "FILMING": 63,
     "OTHER": 8,
-    "SPORTS": 41
+    "SPORTS": 44
   }
 }
